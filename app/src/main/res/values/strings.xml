@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Places</string>
+
+    <string name="your_location">Your location</string>
+    <string name="location_settings_are_not_satisfied">Location settings are not satisfied</string>
+
+    <string name="search">Search</string>
+    <string name="query_hint">What are you looking for?</string>
+
+
+    <string name="message_location_is_unknown">Location is unknown</string>
+    <string name="message_query_is_empty">Query is empty</string>
+
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+    <TextView
+        android:id="@+id/location_label"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="8dp"
+        android:text="@string/your_location" />
+
+    <ProgressBar
+        android:id="@+id/location_progress"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/location_label"
+        android:layout_toRightOf="@id/location_label"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/location_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/location_label"
+        android:layout_toRightOf="@id/location_label"
+        android:visibility="gone" />
+
+
+    <EditText
+        android:id="@+id/query"
+        android:freezesText="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/location_label"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/search_progress"
+        android:hint="@string/query_hint"
+         />
+
+    <FrameLayout
+        android:id="@+id/search_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/query"
+        android:layout_alignBottom="@id/query"
+        android:layout_toLeftOf="@+id/search"
+        >
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/query"
+        android:layout_alignParentRight="true"
+        android:text="@string/search" />
+
+    <fragment
+        android:id="@+id/mapfragment"
+        class="com.here.android.mpa.mapping.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/query"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>
